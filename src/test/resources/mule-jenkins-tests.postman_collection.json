@@ -1,0 +1,37 @@
+{
+	"info": {
+		"_postman_id": "86d43276-3454-48ee-aead-343fe1d87d94",
+		"name": "mule-jenkins-tests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://training4-american-ws-sushant.us-e2.cloudhub.io/api/flights?destination=SFO",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://training4-american-ws-sushant.us-e2.cloudhub.io/api/flights?destination=SFO",
+					"protocol": "http",
+					"host": [
+						"training4-american-ws-sushant",
+						"us-e2",
+						"cloudhub",
+						"io"
+					],
+					"path": [
+						"api",
+						"flights"
+					],
+					"query": [
+						{
+							"key": "destination",
+							"value": "SFO"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
