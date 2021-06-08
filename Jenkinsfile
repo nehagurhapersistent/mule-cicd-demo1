@@ -27,8 +27,9 @@ pipeline {
 			propertyFileByGlob = findFiles(glob: "*.properties");
 			propertiesFile =  propertyFileByGlob[0].path;
 			
-			postmanCollectionByGlob = findFiles(glob: "*.json");
-			postmanCollectionFile =  postmanCollectionByGlob;
+			postmanCollectionByGlob = findFiles(glob: "src/test/resources/*.json");
+			echo "${postmanCollectionByGlob}"
+			postmanCollectionFile =  postmanCollectionByGlob[0].path;
 			echo "${postmanCollectionFile}"
 			
                     if(artifactExists) {
@@ -51,7 +52,12 @@ pipeline {
                                 [artifactId: pom.artifactId,
                                 classifier: '',
                                 file: propertiesFile,
-                                type: "properties"]
+                                type: "properties"],
+								// Lets upload the pom.xml file for additional information for Transitive dependencies
+                                [artifactId: pom.artifactId,
+                                classifier: '',
+                                file: postmanCollectionFile,
+                                type: "json"]
 								
                             ]
                         );
