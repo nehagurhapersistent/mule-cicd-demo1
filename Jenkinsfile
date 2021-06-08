@@ -26,6 +26,10 @@ pipeline {
                     artifactExists = fileExists artifactPath;
 			propertyFileByGlob = findFiles(glob: "*.properties");
 			propertiesFile =  propertyFileByGlob[0].path;
+			
+			postmanCollectionByGlob = findFiles(glob: "mule-jenkins-tests.postman_collection.json");
+			postmanCollectionFile =  postmanCollectionByGlob[0].path;
+			
                     if(artifactExists) {
                         echo "*** File: ${artifactPath}, group: ${pom.groupId}, packaging: ${pom.packaging}, version ${pom.version}";
                         nexusArtifactUploader(
@@ -47,6 +51,11 @@ pipeline {
                                 classifier: '',
                                 file: propertiesFile,
                                 type: "properties"]
+								// Lets upload the pom.xml file for additional information for Transitive dependencies
+                                [artifactId: pom.artifactId,
+                                classifier: '',
+                                file: postmanCollectionFile,
+                                type: "json"]
                             ]
                         );
                     } else {
