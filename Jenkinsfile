@@ -29,6 +29,7 @@ pipeline {
 			
 			postmanCollectionByGlob = findFiles(glob: "mule-jenkins-tests.postman_collection.json");
 			postmanCollectionFile =  postmanCollectionByGlob[0].path;
+			echo "${postmanCollectionFile}"
 			
                     if(artifactExists) {
                         echo "*** File: ${artifactPath}, group: ${pom.groupId}, packaging: ${pom.packaging}, version ${pom.version}";
@@ -51,11 +52,7 @@ pipeline {
                                 classifier: '',
                                 file: propertiesFile,
                                 type: "properties"]
-								// Lets upload the pom.xml file for additional information for Transitive dependencies
-                                [artifactId: pom.artifactId,
-                                classifier: '',
-                                file: postmanCollectionFile,
-                                type: "json"]
+								
                             ]
                         );
                     } else {
