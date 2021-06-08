@@ -27,8 +27,8 @@ pipeline {
 			propertyFileByGlob = findFiles(glob: "*.properties");
 			propertiesFile =  propertyFileByGlob[0].path;
 			
-			postmanCollectionByGlob = findFiles(glob: "mule-jenkins-tests.postman_collection.json");
-			postmanCollectionFile =  postmanCollectionByGlob[0].path;
+			postmanCollectionByGlob = findFiles(glob: "*.json");
+			postmanCollectionFile =  postmanCollectionByGlob;
 			echo "${postmanCollectionFile}"
 			
                     if(artifactExists) {
