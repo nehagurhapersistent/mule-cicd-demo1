@@ -1,12 +1,21 @@
 {
 	"info": {
-		"_postman_id": "86d43276-3454-48ee-aead-343fe1d87d94",
+		"_postman_id": "8dceb279-485e-4482-a8a3-3e27b85692b1",
 		"name": "mule-jenkins-tests",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "http://training4-american-ws-sushant.us-e2.cloudhub.io/api/flights?destination=SFO",
+			"name": "Search All",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		},
+		{
+			"name": "Search SFO",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -30,6 +39,24 @@
 						}
 					]
 				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search LAX",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		},
+		{
+			"name": "Bad Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
 			},
 			"response": []
 		}
