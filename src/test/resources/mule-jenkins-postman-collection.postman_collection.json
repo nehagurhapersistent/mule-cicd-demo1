@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "e745f6e4-dab4-4a03-a341-c26ef7deca61",
-		"name": "mule-jenkins-postman-colection",
+		"name": "mule-jenkins-postman-collection",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
