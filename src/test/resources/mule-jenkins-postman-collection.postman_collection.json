@@ -27,7 +27,7 @@
 			"response": []
 		},
 		{
-			"name": "New Request",
+			"name": "https://stark-gorge-98489.herokuapp.com/api/testimonials",
 			"request": {
 				"method": "GET",
 				"header": [],
