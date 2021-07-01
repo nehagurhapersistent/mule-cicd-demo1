@@ -6,7 +6,7 @@
 	},
 	"item": [
 		{
-			"name": "https://stark-gorge-98489.herokuapp.com/api/concerts",
+			"name": "create concerts negative scenerio",
 			"event": [
 				{
 					"listen": "test",
@@ -21,8 +21,17 @@
 				}
 			],
 			"request": {
-				"method": "GET",
+				"method": "POST",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"_id\": \"5e591a261c9d440000504181\",\r\n        \"author\": \"John Doe\",\r\n        \"text\": \"This company is worth every coin!\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
 					"raw": "https://stark-gorge-98489.herokuapp.com/api/concerts",
 					"protocol": "https",
@@ -40,7 +49,7 @@
 			"response": []
 		},
 		{
-			"name": "https://stark-gorge-98489.herokuapp.com/api/testimonials",
+			"name": "get all testimonials - positive scenerio",
 			"event": [
 				{
 					"listen": "test",
@@ -74,7 +83,7 @@
 			"response": []
 		},
 		{
-			"name": "https://stark-gorge-98489.herokuapp.com/api/testimonials/5e591a411c9d440000504189",
+			"name": "get testimonials by id - negative scenerio",
 			"event": [
 				{
 					"listen": "test",
@@ -109,7 +118,7 @@
 			"response": []
 		},
 		{
-			"name": "https://stark-gorge-98489.herokuapp.com/api/seats",
+			"name": "get all seats - positive scenerio",
 			"event": [
 				{
 					"listen": "test",
@@ -143,7 +152,7 @@
 			"response": []
 		},
 		{
-			"name": "https://stark-gorge-98489.herokuapp.com/api/testimonials",
+			"name": "get testimonials all - negative timeout scenerio",
 			"event": [
 				{
 					"listen": "test",
@@ -151,6 +160,9 @@
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {\r",
 							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
 							"});"
 						],
 						"type": "text/javascript"
@@ -177,7 +189,7 @@
 			"response": []
 		},
 		{
-			"name": "https://stark-gorge-98489.herokuapp.com/api/seats/5e591a871c9d44000050418333324",
+			"name": "get seats by Id - negative scenerio",
 			"event": [
 				{
 					"listen": "test",
